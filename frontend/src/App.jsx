@@ -1,19 +1,32 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import SignUp from './components/SignUp'; 
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import About from "./components/About";
+import Feature from "./components/Feature";
+import Testimonials from "./components/Testimonials";
+import SignUp from "./components/SignUp";
+import Login from "./components/Login";
+import Hero from "./components/Hero";
+
+const Home = () => (
+  <>
+    <Navbar />
+    <Hero />
+    <About />
+    <Feature />
+    <Testimonials />
+
+  </>
+);
 
 const App = () => {
   return (
     <Router>
-      <div className="min-h-screen bg-gray-50">
-        <Navbar />
-        <main className="pt-20 px-4">
-          <Routes>
-            <Route path="/signup" element={<SignUp />} />
-          </Routes>
-        </main>
-      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
     </Router>
   );
 };
