@@ -9,7 +9,7 @@ import Testimonials from "./components/Testimonials";
 import SignUp from "./components/SignUp";
 import Login from "./components/Login";
 import Hero from "./components/Hero";
-import UploadResume from "./components/UploadResume/UploadResume";
+import Footer from "./components/Footer";
 
 const Home = ({ isLoggedIn }) => (
   <>
@@ -18,7 +18,8 @@ const Home = ({ isLoggedIn }) => (
     <About />
     <Feature />
     <Testimonials />
-    {/* <UploadResume isLoggedIn={isLoggedIn} /> */}
+    <Footer/>
+
   </>
 );
 
@@ -33,10 +34,9 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home isLoggedIn={isLoggedIn} />} />
-        <Route path="/signup" element={<SignUp onLogin={handleLogin} />} />
-        <Route path="/login" element={<Login onLogin={handleLogin} />} />
-        <Route path="/upload-resume" element={<UploadResume />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
   );
