@@ -2,7 +2,9 @@ import React from 'react';
 
 const About = () => {
   return (
-    <section className="min-h-screen bg-gradient-to-br from-white via-blue-50 to-blue-100 flex items-center justify-center px-6 py-16">
+    <section 
+    id ="About"
+    className="min-h-screen bg-gradient-to-br from-white via-blue-50 to-blue-100 flex items-center justify-center px-6 py-16">
       <div className="max-w-4xl text-center">
         <h2 className="text-4xl md:text-5xl font-extrabold text-blue-600 mb-6">
           About <span className="text-gray-800">ResumeTracker</span>
