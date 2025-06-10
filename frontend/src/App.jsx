@@ -7,6 +7,7 @@ import Testimonials from "./components/Testimonials";
 import SignUp from "./components/SignUp";
 import Login from "./components/Login";
 import Hero from "./components/Hero";
+import Footer from "./components/Footer";
 
 const Home = () => (
   <>
@@ -15,6 +16,7 @@ const Home = () => (
     <About />
     <Feature />
     <Testimonials />
+    <Footer/>
 
   </>
 );
