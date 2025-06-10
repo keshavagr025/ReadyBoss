@@ -1,5 +1,7 @@
-import React from "react";
+// App.jsx
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import Navbar from "./components/Navbar";
 import About from "./components/About";
 import Feature from "./components/Feature";
@@ -9,7 +11,7 @@ import Login from "./components/Login";
 import Hero from "./components/Hero";
 import Footer from "./components/Footer";
 
-const Home = () => (
+const Home = ({ isLoggedIn }) => (
   <>
     <Navbar />
     <Hero />
@@ -22,12 +24,19 @@ const Home = () => (
 );
 
 const App = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  // Ye function signup/login success ke baad call hoga to update login state
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+  };
+
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<SignUp />} />
-        
+        <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
   );
