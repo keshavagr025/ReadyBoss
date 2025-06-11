@@ -1,35 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Routes, Route } from 'react-router-dom';
+import Dashboard from './pages/Dashboard';
+import ResumeTracker from './pages/ResumeTracker';
+import RoadmapAI from './pages/RoadmapAI';
+import SkillGap from './pages/SkillGap';
+import MockInterviews from './pages/MockInterviews';
+import SalaryPrediction from './pages/SalaryInsights';
+import Navbar from './components/Navbar';
+import { Applications } from './pages/Applications';
+import Analytics from './pages/Analytics';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
+    // Adding the Navbar component to the App component
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+      <Navbar />
 
-export default App
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path='/Applications' element={<Applications />} />
+        <Route path="/resumes" element={<ResumeTracker />} />
+        <Route path="/career-roadmap" element={<RoadmapAI />} />
+        <Route path="/skills" element={<SkillGap />} />
+        <Route path="/mock-interviews" element={<MockInterviews />} />
+        <Route path="/salary-insights" element={<SalaryPrediction />} />
+        <Route path='/analytics' element={<Analytics/>}/>
+      </Routes>
+    </>
+  );
+}
