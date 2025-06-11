@@ -11,66 +11,15 @@ const Navbar = () => {
 
   const scrollItems = [
     {
-      label: (
-        <motion.h1
-          className="text-3xl font-semibold text-black-600 cursor-default"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{
-            opacity: 1,
-            scale: 1,
-            textShadow: "0 0 6px #3b82f6, 0 0 12px #60a5fa",
-          }}
-          transition={{ duration: 1 }}
-          whileHover={{
-            scale: 1.05,
-            textShadow: "0 0 10px #2563eb, 0 0 18px #3b82f6",
-          }}
-        >
-          About
-        </motion.h1>
-      ),
-      id: "About",
+      label: "About",
+      id: "about",
     },
     {
-      label: (
-        <motion.h1
-          className="text-3xl font-semibold text-black-600 cursor-default"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{
-            opacity: 1,
-            scale: 1,
-            textShadow: "0 0 6px #3b82f6, 0 0 12px #60a5fa",
-          }}
-          transition={{ duration: 1 }}
-          whileHover={{
-            scale: 1.05,
-            textShadow: "0 0 10px #2563eb, 0 0 18px #3b82f6",
-          }}
-        >
-          Feature
-        </motion.h1>
-      ),
+      label: "Feature",
       id: "features",
     },
     {
-      label: (
-        <motion.h1
-          className="text-3xl font-semibold text-black-600 cursor-default"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{
-            opacity: 1,
-            scale: 1,
-            textShadow: "0 0 6px #3b82f6, 0 0 12px #60a5fa",
-          }}
-          transition={{ duration: 1 }}
-          whileHover={{
-            scale: 1.05,
-            textShadow: "0 0 10px #2563eb, 0 0 18px #3b82f6",
-          }}
-        >
-          Testimonials
-        </motion.h1>
-      ),
+      label: "Testimonials",
       id: "testimonials",
     },
   ];
@@ -81,57 +30,40 @@ const Navbar = () => {
       style={{ fontFamily: "'Poppins', sans-serif" }}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-  <motion.img
-    src={logo}
-    alt="ReadyBoss Logo"
-    className="h-10 w-19 object-contain cursor-pointer" // increased height and width
-    initial={{ opacity: 0, scale: 0.8 }}
-    animate={{
-      opacity: 1,
-      scale: 1,
-    }}
-    whileHover={{
-      scale: 1.1,
-    }}
-    transition={{ duration: 0.6 }}
-  />
+        {/* Logo */}
+        <motion.img
+          src={logo}
+          alt="Logo"
+          className="h-12 w-auto rounded-full shadow-md border-2 border-purple-200 hover:shadow-purple-400 transition-transform duration-300 cursor-pointer"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          whileHover={{ scale: 1.1 }}
+          transition={{ duration: 0.6 }}
+        />
 
         {/* Desktop Nav */}
-        <ul className="hidden md:flex space-x-10 text-gray-700 font-medium items-center">
+        <ul className="hidden md:flex space-x-10 items-center">
           {scrollItems.map((item) => (
-            <li key={item.label}>
+            <li key={item.id}>
               <ScrollLink
                 to={item.id}
                 smooth={true}
                 duration={500}
                 offset={-80}
-                className="cursor-pointer text-gray-700 hover:text-primary-dark transition-colors font-semibold"
+                className="text-lg text-purple-700 hover:text-purple-600 font-medium transition-colors cursor-pointer"
               >
                 {item.label}
               </ScrollLink>
             </li>
           ))}
           <li>
-            <RouterLink
-              to="/signup"
-              className="text-primary-dark hover:text-primary-light transition-colors font-semibold"
-            >
-              <motion.h1
-                className="text-3xl font-semibold text-black-600 cursor-default"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{
-                  opacity: 1,
-                  scale: 1,
-                  textShadow: "0 0 6px #3b82f6, 0 0 12px #60a5fa",
-                }}
-                transition={{ duration: 1 }}
-                whileHover={{
-                  scale: 1.05,
-                  textShadow: "0 0 10px #2563eb, 0 0 18px #3b82f6",
-                }}
+            <RouterLink to="/signup">
+              <motion.button
+                className="px-4 py-2 rounded-lg bg-purple-500 text-white font-semibold shadow-md hover:bg-purple-600 hover:shadow-lg transition"
+                whileHover={{ scale: 1.05 }}
               >
                 Sign Up
-              </motion.h1>
+              </motion.button>
             </RouterLink>
           </li>
         </ul>
@@ -141,7 +73,7 @@ const Navbar = () => {
           <button
             onClick={toggleMenu}
             aria-label="Toggle menu"
-            className="p-2 rounded-md text-primary-dark hover:bg-primary-light hover:text-white transition"
+            className="p-2 rounded-md text-purple-700 hover:bg-purple-100 hover:text-purple-900 transition"
           >
             {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
           </button>
@@ -161,7 +93,7 @@ const Navbar = () => {
         )}
       </AnimatePresence>
 
-      {/* Mobile Menu Dropdown */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.ul
@@ -173,8 +105,8 @@ const Navbar = () => {
           >
             {scrollItems.map((item) => (
               <li
-                key={item.label}
-                className="px-6 py-3 hover:bg-primary-light hover:text-white rounded-md transition cursor-pointer"
+                key={item.id}
+                className="px-6 py-3 hover:bg-purple-100 text-purple-700 hover:text-purple-900 rounded-md transition cursor-pointer"
               >
                 <ScrollLink
                   to={item.id}
@@ -188,10 +120,10 @@ const Navbar = () => {
                 </ScrollLink>
               </li>
             ))}
-            <li className="px-6 py-3 hover:bg-primary-light hover:text-white rounded-md transition cursor-pointer">
+            <li className="px-6 py-3">
               <RouterLink
                 to="/signup"
-                className="block font-semibold"
+                className="block text-center bg-purple-500 text-white px-4 py-2 rounded-md font-semibold shadow hover:bg-purple-600 transition"
                 onClick={() => setIsOpen(false)}
               >
                 Sign Up
