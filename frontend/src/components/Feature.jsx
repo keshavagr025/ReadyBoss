@@ -12,33 +12,33 @@ const Feature = () => {
   const features = [
     {
       icon: <FaUpload className="text-4xl text-red-500 mx-auto mb-4 drop-shadow" />,
-      title: 'Resume Upload',
-      description: 'Quickly upload and manage multiple resume versions in one place.',
+      title: 'AI Resume Analysis',
+      description: 'Our LLM analyzes your resume structure, content, and formatting to ensure ATS compatibility and professional presentation.',
     },
     {
       icon: <FaChartLine className="text-4xl text-red-500 mx-auto mb-4 drop-shadow" />,
-      title: 'Track Progress',
-      description: 'Visualize your application journey and job status in real-time.',
+      title: 'Smart Keyword Extraction',
+      description: 'Advanced NLP algorithms identify key skills and qualifications from job descriptions to help you tailor your resume for each application.',
     },
     {
       icon: <FaUserCheck className="text-4xl text-red-500 mx-auto mb-4 drop-shadow" />,
-      title: 'Smart Recommendations',
-      description: 'AI-driven tips to tailor your resume for each job posting.',
+      title: 'Real-time LLM Feedback',
+      description: 'Get instant, AI-generated feedback on your resume with detailed scoring and personalized improvement suggestions.',
     },
     {
       icon: <FaMagic className="text-4xl text-red-500 mx-auto mb-4 drop-shadow" />,
-      title: 'One-Click Enhancement',
-      description: 'Instantly improve your resume formatting and keyword alignment.',
+      title: 'Semantic Matching',
+      description: 'Our AI goes beyond keyword matching to understand the semantic meaning of your experience and how it aligns with job requirements.',
     },
     {
       icon: <FaClipboardCheck className="text-4xl text-red-500 mx-auto mb-4 drop-shadow" />,
-      title: 'Job Matching',
-      description: 'Find jobs that match your skills and experience automatically.',
+      title: 'Parses Resume',
+      description: 'Extracts structured data from PDFs,DOCs,and raw text using intelligent parsing',
     },
     {
       icon: <FaLightbulb className="text-4xl text-red-500 mx-auto mb-4 drop-shadow" />,
-      title: 'AI Career Insights',
-      description: 'Get personalized career growth suggestions based on your goals.',
+      title: 'Intelligent Suggestions',
+      description: 'Get AI-generated, actionable suggestions to improve your resumes content, formatting, and impact for each specific job application.',
     },
   ];
 
