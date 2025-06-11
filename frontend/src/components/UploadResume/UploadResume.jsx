@@ -20,6 +20,9 @@ const UploadResume = () => {
       fileSize: `${(resumeFile.size / 1024).toFixed(1)} KB`,
       previewText:
         "This is a sample summary of the resume. Later, this can be replaced by extracted content.",
+      userName: "John Doe",
+      userEmail: "johndoe@example.com",
+      userContact: "+91 9876543210",
     };
 
     setUploadedResumes([newResume, ...uploadedResumes]);
@@ -34,7 +37,7 @@ const UploadResume = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto py-12 px-4 sm:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-blue-100 via-blue-200 to-blue-300 py-12 px-4 sm:px-8">
       <h2 className="text-4xl font-bold text-center text-blue-700 mb-10">
         Upload Your Resume
       </h2>
@@ -69,6 +72,9 @@ const UploadResume = () => {
                 uploadDate={resume.uploadDate}
                 fileSize={resume.fileSize}
                 previewText={resume.previewText}
+                userName={resume.userName}
+                userEmail={resume.userEmail}
+                userContact={resume.userContact}
                 onView={() => alert(`Viewing ${resume.fileName}`)}
                 onDownload={() => alert(`Downloading ${resume.fileName}`)}
                 onDelete={() => handleDelete(index)}
