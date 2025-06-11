@@ -1,62 +1,53 @@
 import React from "react";
-import { useNavigate, Link } from "react-router-dom";
-import { UploadCloud } from "lucide-react";
+import ResumeAnalyzer from "./UploadResume/ResumeAnalyzer";
 
 const Hero = () => {
-  const navigate = useNavigate();
-
-  const handleUploadClick = () => {
-    navigate("/upload-resume");
-  };
-
   return (
-    <section className="bg-gradient-to-br from-blue-50 via-white to-purple-100 py-20 px-4" id="hero">
-      <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-12">
-        
-        {/* Left Content */}
-        <div className="text-center md:text-left max-w-xl">
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-blue-700 leading-tight mb-4">
-            Supercharge Your Career with <span className="text-purple-600">ReadyBoss</span>
-          </h1>
-          <p className="text-gray-700 text-lg sm:text-xl mb-8">
-            Upload your resume and let AI handle the rest — instant enhancements, job targeting, and professional formatting made easy.
-          </p>
+    <section className="bg-gradient-to-br from-[#ffe5e5] via-[#d6f4ff] to-[#ffffff] text-gray-900 min-h-screen py-24 px-6">
+      <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center justify-between gap-20">
 
-          {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-            <button
-              onClick={handleUploadClick}
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-lg rounded-xl font-semibold shadow-lg hover:shadow-xl hover:brightness-110 active:scale-[0.98] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-400"
-            >
-              <UploadCloud size={20} className="mb-0.5" />
-              Upload Resume
-            </button>
+        {/* LEFT CONTENT */}
+        <div className="max-w-xl text-center lg:text-left space-y-6">
+         <h1 className="text-5xl font-extrabold leading-tight">
+  <span className="text-[#b30000] drop-shadow-md">AI-powered resume</span>
+  <br />
+  <span className="text-[#003366] drop-shadow-md">tracking & optimization</span>
+</h1>
 
-            <Link
-              to="/signup"
-              className="px-6 py-3 text-lg bg-white border border-blue-600 text-blue-600 rounded-xl shadow hover:bg-blue-50 transition"
-            >
-              Create Account
-            </Link>
 
-            <Link
-              to="/login"
-              className="px-6 py-3 text-lg text-gray-600 hover:underline"
-            >
-              Already have an account?
-            </Link>
+          <div className="flex items-center gap-12 mt-4 text-lg font-semibold">
+            <div>
+              <p className="text-3xl text-red-600 font-bold">90K+</p>
+              <p className="text-gray-800 text-base mt-1">Successful Applications</p>
+            </div>
+            <div>
+              <p className="text-3xl text-blue-600 font-bold">99%</p>
+              <p className="text-gray-800 text-base mt-1">LLM Accuracy Rate</p>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className="text-xl font-semibold text-blue-800">
+              INTELLIGENT ANALYSIS <span className="text-red-500">*</span>
+            </h3>
+            <p className="text-gray-800 text-base leading-relaxed">
+              Our advanced LLM-powered platform analyzes your resume against job descriptions with unmatched precision.
+              Get personalized recommendations, keyword optimization, and intelligent insights to dramatically improve
+              your chances of landing interviews and tracking application success.
+            </p>
+          </div>
+
+          {/* Feature tags */}
+          <div className="flex flex-wrap gap-3 pt-2">
+            <span className="bg-red-500 px-4 py-1.5 text-sm rounded-full font-semibold text-white">LLM-Powered Analysis</span>
+            <span className="bg-blue-500 px-4 py-1.5 text-sm rounded-full font-semibold text-white">NLP Keyword Matching</span>
+            <span className="bg-purple-500 px-4 py-1.5 text-sm rounded-full font-semibold text-white">Smart Tracking System</span>
           </div>
         </div>
 
-        {/* Right Hero Image */}
-        <div className="relative w-full max-w-md mx-auto">
-          <div className="bg-white p-4 rounded-3xl shadow-xl border border-blue-100">
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png"
-              alt="Resume Illustration"
-              className="w-full object-contain"
-            />
-          </div>
+        {/* RIGHT: RESUME ANALYZER */}
+        <div className="w-full max-w-2xl">
+          <ResumeAnalyzer />
         </div>
       </div>
     </section>
