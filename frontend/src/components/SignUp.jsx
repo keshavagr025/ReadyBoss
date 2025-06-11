@@ -1,34 +1,52 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-const SignUp = () => {
+const SignUp = ({ onLogin }) => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password: '',
-    confirmPassword: ''
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
   });
 
   const handleChange = (e) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your signup logic here (validation, API call, etc.)
-    alert('Sign Up successful!');
+
+    // Simple validation example
+    if (formData.password !== formData.confirmPassword) {
+      alert("Passwords do not match!");
+      return;
+    }
+
+    // Yahan tum API call kar sakte ho signup ke liye
+    // API call successful hone par:
+    alert("Sign Up successful!");
+
+    // App ko batao user logged in ho gaya
+    if (onLogin) onLogin();
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
       <div className="max-w-md w-full bg-white p-8 rounded-lg shadow-lg">
-        <h2 className="text-3xl font-bold text-center mb-6 text-blue-600">Create Your Account</h2>
+        <h2 className="text-3xl font-bold text-center mb-6 text-blue-600">
+          Create Your Account
+        </h2>
         <form onSubmit={handleSubmit} className="space-y-5">
           <div>
-            <label htmlFor="name" className="block text-gray-700 font-medium mb-1">Full Name</label>
+            <label
+              htmlFor="name"
+              className="block text-gray-700 font-medium mb-1"
+            >
+              Full Name
+            </label>
             <input
               type="text"
               name="name"
@@ -41,7 +59,12 @@ const SignUp = () => {
             />
           </div>
           <div>
-            <label htmlFor="email" className="block text-gray-700 font-medium mb-1">Email Address</label>
+            <label
+              htmlFor="email"
+              className="block text-gray-700 font-medium mb-1"
+            >
+              Email Address
+            </label>
             <input
               type="email"
               name="email"
@@ -54,7 +77,12 @@ const SignUp = () => {
             />
           </div>
           <div>
-            <label htmlFor="password" className="block text-gray-700 font-medium mb-1">Password</label>
+            <label
+              htmlFor="password"
+              className="block text-gray-700 font-medium mb-1"
+            >
+              Password
+            </label>
             <input
               type="password"
               name="password"
@@ -67,7 +95,12 @@ const SignUp = () => {
             />
           </div>
           <div>
-            <label htmlFor="confirmPassword" className="block text-gray-700 font-medium mb-1">Confirm Password</label>
+            <label
+              htmlFor="confirmPassword"
+              className="block text-gray-700 font-medium mb-1"
+            >
+              Confirm Password
+            </label>
             <input
               type="password"
               name="confirmPassword"
@@ -88,7 +121,7 @@ const SignUp = () => {
         </form>
 
         <p className="mt-6 text-center text-gray-600">
-          Already have an account?{' '}
+          Already have an account?{" "}
           <Link to="/login" className="text-blue-600 font-medium hover:underline">
             Log In
           </Link>

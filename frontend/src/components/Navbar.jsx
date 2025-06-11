@@ -3,6 +3,7 @@ import { Link as ScrollLink } from "react-scroll";
 import { Link as RouterLink } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa";
+import logo from '../assets/logo.jpeg';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +13,7 @@ const Navbar = () => {
     {
       label: (
         <motion.h1
-          className="text-3xl font-semibold text-blue-600 cursor-default"
+          className="text-3xl font-semibold text-black-600 cursor-default"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{
             opacity: 1,
@@ -28,12 +29,12 @@ const Navbar = () => {
           About
         </motion.h1>
       ),
-      id: "about",
+      id: "About",
     },
     {
       label: (
         <motion.h1
-          className="text-3xl font-semibold text-blue-600 cursor-default"
+          className="text-3xl font-semibold text-black-600 cursor-default"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{
             opacity: 1,
@@ -54,7 +55,7 @@ const Navbar = () => {
     {
       label: (
         <motion.h1
-          className="text-3xl font-semibold text-blue-600 cursor-default"
+          className="text-3xl font-semibold text-black-600 cursor-default"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{
             opacity: 1,
@@ -80,22 +81,20 @@ const Navbar = () => {
       style={{ fontFamily: "'Poppins', sans-serif" }}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <motion.h1
-          className="text-3xl font-semibold text-red-600 cursor-default"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{
-            opacity: 1,
-            scale: 1,
-            textShadow: "0 0 8px #f87171, 0 0 15px #f87171",
-          }}
-          transition={{ duration: 0.8 }}
-          whileHover={{
-            scale: 1.1,
-            textShadow: "0 0 12px #ef4444, 0 0 20px #ef4444",
-          }}
-        >
-          ReadyBoss
-        </motion.h1>
+  <motion.img
+    src={logo}
+    alt="ReadyBoss Logo"
+    className="h-10 w-19 object-contain cursor-pointer" // increased height and width
+    initial={{ opacity: 0, scale: 0.8 }}
+    animate={{
+      opacity: 1,
+      scale: 1,
+    }}
+    whileHover={{
+      scale: 1.1,
+    }}
+    transition={{ duration: 0.6 }}
+  />
 
         {/* Desktop Nav */}
         <ul className="hidden md:flex space-x-10 text-gray-700 font-medium items-center">
@@ -118,7 +117,7 @@ const Navbar = () => {
               className="text-primary-dark hover:text-primary-light transition-colors font-semibold"
             >
               <motion.h1
-                className="text-3xl font-semibold text-blue-600 cursor-default"
+                className="text-3xl font-semibold text-black-600 cursor-default"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{
                   opacity: 1,
