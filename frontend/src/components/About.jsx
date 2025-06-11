@@ -1,39 +1,55 @@
-import React from 'react';
+import React from "react";
 
 const About = () => {
   return (
-    <section className="min-h-screen bg-gradient-to-br from-white via-blue-50 to-blue-100 flex items-center justify-center px-6 py-16">
-      <div className="max-w-4xl text-center">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-blue-600 mb-6">
-          About <span className="text-gray-800">ResumeTracker</span>
-        </h2>
+    <section
+      id="about"
+      className="min-h-screen bg-gradient-to-br from-blue-50 via-[#eaf6ff] to-red-50 flex items-center justify-center px-6 py-24 text-gray-800"
+    >
+      <div className="max-w-6xl w-full">
+        {/* Heading */}
+        <div className="text-center mb-16 px-4">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-red-600 leading-tight mb-4">
+            About <span className="text-blue-700">ResumeTracker</span>
+          </h2>
+          <p className="text-blue-700 text-lg md:text-xl max-w-3xl mx-auto">
+            ResumeTracker is your intelligent companion for tracking, managing, and optimizing job applications.
+            Whether you're a student, a working professional, or a recruiter — we simplify your resume journey with impact.
+          </p>
+        </div>
 
-        <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-8">
-          ResumeTracker is your smart assistant for tracking, managing, and optimizing your job applications. 
-          Whether you're a student, a working professional, or a recruiter, we simplify the resume journey for you.
-        </p>
-
-        <div className="grid md:grid-cols-3 gap-6">
-          <div className="p-6 bg-white shadow rounded-2xl hover:shadow-lg transition duration-300">
-            <h3 className="text-xl font-semibold text-blue-500 mb-2">Simple UI</h3>
-            <p className="text-gray-600">Clean and intuitive design focused on ease of use.</p>
+        {/* Feature Cards */}
+        <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 px-4">
+          {/* Card 1 */}
+          <div className="p-6 bg-white shadow-md hover:shadow-xl border border-blue-200 hover:border-red-400 transition transform hover:-translate-y-1 duration-300 text-center rounded-2xl">
+            <div className="text-4xl mb-3 animate-bounce">💡</div>
+            <h3 className="text-xl font-semibold text-red-600 mb-2">
+              Intuitive UI
+            </h3>
+            <p className="text-blue-700 text-sm">
+              Clean, elegant interface focused on delivering speed and clarity without distractions.
+            </p>
           </div>
 
           {/* Card 2 */}
-          <div className="p-6 bg-[#1b2540] rounded-3xl shadow-md hover:shadow-2xl transition duration-300 text-center border border-blue-900 hover:border-blue-500">
-            <div className="text-blue-400 text-3xl font-bold mb-2">📄</div>
-            <h3 className="text-xl font-semibold text-blue-200 mb-2">Resume Upload</h3>
-            <p className="text-blue-100 text-sm">
-              Upload and manage multiple resume versions with ease and flexibility.
+          <div className="p-6 bg-white shadow-md hover:shadow-xl border border-blue-200 hover:border-red-400 transition transform hover:-translate-y-1 duration-300 text-center rounded-2xl">
+            <div className="text-4xl mb-3 animate-bounce">📤</div>
+            <h3 className="text-xl font-semibold text-red-600 mb-2">
+              Seamless Upload
+            </h3>
+            <p className="text-blue-700 text-sm">
+              Upload, edit, and manage multiple resume versions — all in one place.
             </p>
           </div>
 
           {/* Card 3 */}
-          <div className="p-6 bg-[#1b2540] rounded-3xl shadow-md hover:shadow-2xl transition duration-300 text-center border border-blue-900 hover:border-blue-500">
-            <div className="text-blue-400 text-3xl font-bold mb-2">📊</div>
-            <h3 className="text-xl font-semibold text-blue-200 mb-2">Smart Insights</h3>
-            <p className="text-blue-100 text-sm">
-              AI-powered suggestions and analytics to boost your success rate.
+          <div className="p-6 bg-white shadow-md hover:shadow-xl border border-blue-200 hover:border-red-400 transition transform hover:-translate-y-1 duration-300 text-center rounded-2xl">
+            <div className="text-4xl mb-3 animate-bounce">📈</div>
+            <h3 className="text-xl font-semibold text-red-600 mb-2">
+              AI Insights
+            </h3>
+            <p className="text-blue-700 text-sm">
+              Smart analysis, suggestions, and tracking powered by advanced AI to improve your job success rate.
             </p>
           </div>
         </div>
