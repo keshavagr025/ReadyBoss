@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion, AnimatePresence } from "framer-motion";
 import {
   FaUpload,
   FaChartLine,
@@ -57,8 +58,10 @@ const Feature = () => {
 
         <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full max-w-7xl">
           {features.map((feature, index) => (
-            <div
+            <motion.div
               key={index}
+              whileHover={{ scale: 1.05, y: -5 }}
+              transition={{ type: 'spring', stiffness: 20000 }}
               className="bg-white hover:bg-blue-50 p-6 rounded-2xl border border-blue-200 shadow-md hover:shadow-lg transition duration-300 text-center"
             >
               {feature.icon}
@@ -66,7 +69,7 @@ const Feature = () => {
                 {feature.title}
               </h3>
               <p className="text-gray-600 text-sm">{feature.description}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
