@@ -51,7 +51,7 @@ const Navbar = () => {
                 smooth={true}
                 duration={500}
                 offset={-80}
-                className="text-lg text-purple-700 hover:text-black font-medium transition-colors cursor-pointer"
+                className="text-lg text-purple-700 hover:text-black font-sans transition-colors cursor-pointer"
               >
                 {item.label}
               </ScrollLink>
@@ -109,7 +109,7 @@ const Navbar = () => {
             {scrollItems.map((item) => (
               <li
                 key={item.id}
-                className="px-6 py-3 hover:bg-purple-100 text-purple-700 hover:text-purple-900 rounded-md transition cursor-pointer"
+                className="px-3 py-3 hover:bg-purple-100 text-purple-700 hover:text-purple-900 rounded-md transition cursor-pointer"
               >
                 <ScrollLink
                   to={item.id}

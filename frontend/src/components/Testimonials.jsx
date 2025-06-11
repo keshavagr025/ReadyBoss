@@ -46,7 +46,7 @@ const Testimonials = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: id * 0.1 }}
-              className="bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl border border-blue-200 hover:border-red-400 transition-all duration-300"
+              className="bg-white hover:bg-blue-50 p-6 rounded-2xl border border-blue-200 shadow-md hover:shadow-lg transition duration-300 text-center"
             >
               <div className="flex flex-col items-center text-center space-y-4">
                 <img
