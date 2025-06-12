@@ -12,6 +12,7 @@ import Hero from "./components/Hero";
 import Footer from "./components/Footer";
 import UploadResume from "./components/UploadResume/UploadResume";
 import ResumeAnalyzer from "./components/UploadResume/ResumeAnalyzer";
+import ChatBot from "./components/ChatBot";
 
 // Home Page Component
 const Home = ({ isLoggedIn }) => (
@@ -22,6 +23,7 @@ const Home = ({ isLoggedIn }) => (
     <Feature />
     <Testimonials />
     <Footer />
+    <ChatBot/>
     {isLoggedIn && <UploadResume />}
   </>
 );
@@ -44,6 +46,7 @@ const App = () => {
         <Route path="/signup" element={<SignUp onLogin={handleLogin} />} />
         <Route path="/login" element={<Login onLogin={handleLogin} />} />
          <Route path="/upload-resume" element={<UploadResume />} />
+         <Route path="/chatbot"element={<ChatBot/>}/>
          
 {/* <Route path="/upload-resume-analyzer" element={<ResumeAnalyzer />} /> */}
       </Routes>
