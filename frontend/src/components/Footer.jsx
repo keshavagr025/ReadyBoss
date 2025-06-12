@@ -18,7 +18,7 @@ const Footer = () => {
 
         {/* Company Info */}
         <div>
-          <h2 className="text-2xl font-bold text-red-700 mb-4">ResumeTracker</h2>
+          <h2 className="text-2xl font-bold text-red-700 mb-4">ReadyBoss</h2>
           <p className="text-sm text-gray-700 leading-relaxed">
             A perfect blend of power and calm — manage your resumes confidently and smoothly.
           </p>
@@ -70,7 +70,7 @@ const Footer = () => {
 
       {/* Bottom Line */}
       <div className="mt-8 text-center text-sm text-gray-600 border-t border-red-200 pt-6">
-        © {new Date().getFullYear()} ResumeTracker. All rights reserved.
+        © {new Date().getFullYear()} ReadyBoss. All rights reserved.
       </div>
     </footer>
   );
