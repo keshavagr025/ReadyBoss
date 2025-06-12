@@ -3,7 +3,7 @@ import { Link as ScrollLink } from "react-scroll";
 import { Link as RouterLink } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa";
-import logo from '../assets/logo.jpeg';
+import logo from '../assets/logo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,22 +11,22 @@ const Navbar = () => {
 
   const scrollItems = [
     {
-      label: "About",
+      label: "ABOUT",
       id: "about",
     },
     {
-      label: "Feature",
+      label: "FEATURES",
       id: "features",
     },
     {
-      label: "Testimonials",
+      label: "TESTIMONIALS",
       id: "testimonials",
     },
   ];
 
   return (
     <nav
-      className="bg-white shadow-md fixed w-full z-50 top-0 left-0 font-sans"
+      className="bg-blue-50 shadow-md fixed w-full z-50 top-0 left-0 font-sans"
       style={{ fontFamily: "'Poppins', sans-serif" }}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between "> 
@@ -34,7 +34,7 @@ const Navbar = () => {
         <motion.img
           src={logo}
           alt="Logo"
-          className="h-12 w-auto rounded-full shadow-md border-2 border-purple-200 hover:shadow-purple-400 transition-transform duration-300 cursor-pointer"
+          className="h-10 "
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           whileHover={{ scale: 1.1 }}
@@ -42,7 +42,8 @@ const Navbar = () => {
         />
 
         {/* Desktop Nav */}
-        <ul className="hidden md:flex space-x-10 items-center">
+          {/* Center Links */}
+        <ul className="hidden md:flex space-x-10 items-center mx-auto">
           {scrollItems.map((item) => (
             <li key={item.id}>
               <ScrollLink
@@ -50,23 +51,25 @@ const Navbar = () => {
                 smooth={true}
                 duration={500}
                 offset={-80}
-                className="text-lg text-purple-700 hover:text-purple-600 font-medium transition-colors cursor-pointer"
+                className="text-lg text-purple-700 hover:text-black font-sans transition-colors cursor-pointer"
               >
                 {item.label}
               </ScrollLink>
             </li>
           ))}
-          <li>
-            <RouterLink to="/signup">
-              <motion.button
-                className="px-4 py-2 rounded-lg bg-purple-500 text-white font-semibold shadow-md hover:bg-purple-600 hover:shadow-lg transition"
-                whileHover={{ scale: 1.05 }}
-              >
-                Sign Up
-              </motion.button>
-            </RouterLink>
-          </li>
         </ul>
+
+        {/* Right Side Sign Up */}
+        <div className="hidden md:flex items-center">
+          <RouterLink to="/signup">
+            <motion.button
+              className="px-4 py-2 rounded-lg bg-purple-500 text-white font-semibold shadow-md hover:bg-purple-600 hover:shadow-lg transition"
+              whileHover={{ scale: 1.05 }}
+            >
+              Sign Up
+            </motion.button>
+          </RouterLink>
+        </div>
 
         {/* Mobile Toggle */}
         <div className="md:hidden">
@@ -106,7 +109,7 @@ const Navbar = () => {
             {scrollItems.map((item) => (
               <li
                 key={item.id}
-                className="px-6 py-3 hover:bg-purple-100 text-purple-700 hover:text-purple-900 rounded-md transition cursor-pointer"
+                className="px-3 py-3 hover:bg-purple-100 text-purple-700 hover:text-purple-900 rounded-md transition cursor-pointer"
               >
                 <ScrollLink
                   to={item.id}
