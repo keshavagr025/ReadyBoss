@@ -26,7 +26,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className="bg-blue-50 shadow-md fixed w-full z-35 top-0 left-0 font-sans"
+      className="bg-blue-50 shadow-md fixed w-full z-50 top-0 left-0 font-sans"
       style={{ fontFamily: "'Poppins', sans-serif" }}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
