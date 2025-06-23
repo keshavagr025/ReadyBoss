@@ -18,7 +18,8 @@
     "react-parallax-tilt": "^1.7.297",
     "react-router-dom": "^7.6.2",
     "react-scroll": "^1.9.3",
-    "shadcn-ui": "^0.9.5"
+    "shadcn-ui": "^0.9.5",
+    "socket.io-client": "^4.8.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
