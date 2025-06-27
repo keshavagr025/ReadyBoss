@@ -29,11 +29,11 @@ const Testimonials = () => {
   return (
     <section
       id="testimonials"
-      className="w-full py-24 px-4 bg-gradient-to-br from-blue-50 via-[#eaf6ff] to-red-50"
+      className="w-full py-24 px-4 "
     >
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-red-600 mb-6">
-          What Our <span className="text-blue-700">Users Say</span>
+        <h2 className="text-4xl md:text-5xl font-extrabold text-purple-300 mb-6">
+          What Our <span className="text-black">Users Say</span>
         </h2>
         <p className="text-blue-800 text-lg md:text-xl mb-16 max-w-2xl mx-auto">
           Hear from professionals who've used ResumeTracker to upgrade their job hunt.

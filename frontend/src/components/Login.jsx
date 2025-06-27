@@ -11,6 +11,9 @@ const Login = () => {
   };
 
   return (
+    <section
+      id = "login">
+    
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-purple-100 to-blue-200 px-4">
       <div className="backdrop-blur-xl bg-white/60 border border-purple-100 rounded-3xl shadow-2xl p-10 max-w-md w-full">
         <h2 className="text-4xl font-extrabold text-center text-purple-700 mb-8">
@@ -64,6 +67,7 @@ const Login = () => {
         </p>
       </div>
     </div>
+    </section>
   );
 };
 
