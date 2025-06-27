@@ -12,6 +12,7 @@ import ChatBot from './components/ChatBot'
 export default function App() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
+export default function App() {
   return (
     <div className="flex min-h-screen">
       {/* Sidebar with global control */}

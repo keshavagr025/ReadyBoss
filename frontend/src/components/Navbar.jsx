@@ -26,10 +26,17 @@ const Navbar = () => {
 
   return (
     <nav
+<<<<<<< HEAD
       className="bg-blue-50 shadow-md fixed w-full z-50 top-0 left-0 font-sans"
       style={{ fontFamily: "'Poppins', sans-serif" }}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between "> 
+=======
+      className="bg-blue-50 shadow-md fixed w-full z-50 top-0 left-0 font-sans overflow-hidden"
+      style={{ fontFamily: "'Poppins', sans-serif" }}
+    >
+      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+>>>>>>> f29dba8b725a275fbfeb367dbabdad54ae888872
         {/* Logo */}
         <motion.img
           src={logo}
@@ -42,7 +49,11 @@ const Navbar = () => {
         />
 
         {/* Desktop Nav */}
+<<<<<<< HEAD
           {/* Center Links */}
+=======
+        {/* Center Links */}
+>>>>>>> f29dba8b725a275fbfeb367dbabdad54ae888872
         <ul className="hidden md:flex space-x-10 items-center mx-auto">
           {scrollItems.map((item) => (
             <li key={item.id}>
@@ -97,14 +108,23 @@ const Navbar = () => {
       </AnimatePresence>
 
       {/* Mobile Menu */}
+<<<<<<< HEAD
       <AnimatePresence>
         {isOpen && (
           <motion.ul
             className="md:hidden fixed top-16 right-4 w-56 bg-white rounded-lg shadow-lg z-50 flex flex-col py-4"
+=======
+      {/* Mobile Menu Fullscreen Overlay */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            key="mobile-menu"
+>>>>>>> f29dba8b725a275fbfeb367dbabdad54ae888872
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
+<<<<<<< HEAD
           >
             {scrollItems.map((item) => (
               <li
@@ -112,10 +132,31 @@ const Navbar = () => {
                 className="px-3 py-3 hover:bg-purple-100 text-purple-700 hover:text-purple-900 rounded-md transition cursor-pointer"
               >
                 <ScrollLink
+=======
+            className="md:hidden fixed inset-0 z-50 bg-white flex flex-col py-6 px-6"
+          >
+            {/* Close Icon at Top Right */}
+            <div className="flex justify-end mb-4">
+              <button
+                onClick={toggleMenu}
+                aria-label="Close menu"
+                className="text-purple-700 hover:text-purple-900 transition"
+              >
+                <FaTimes size={28} />
+              </button>
+            </div>
+
+            {/* Navigation Items */}
+            <div className="flex flex-col space-y-6">
+              {scrollItems.map((item) => (
+                <ScrollLink
+                  key={item.id}
+>>>>>>> f29dba8b725a275fbfeb367dbabdad54ae888872
                   to={item.id}
                   smooth={true}
                   duration={500}
                   offset={-80}
+<<<<<<< HEAD
                   className="block font-semibold"
                   onClick={() => setIsOpen(false)}
                 >
@@ -135,6 +176,26 @@ const Navbar = () => {
           </motion.ul>
         )}
       </AnimatePresence>
+=======
+                  className="text-xl text-purple-700 hover:text-purple-900 font-semibold cursor-pointer"
+                  onClick={toggleMenu}
+                >
+                  {item.label}
+                </ScrollLink>
+              ))}
+              <RouterLink
+                to="/signup"
+                className="text-center bg-purple-500 text-white px-4 py-3 rounded-md font-semibold shadow hover:bg-purple-600 transition"
+                onClick={toggleMenu}
+              >
+                Sign Up
+              </RouterLink>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+>>>>>>> f29dba8b725a275fbfeb367dbabdad54ae888872
     </nav>
   );
 };

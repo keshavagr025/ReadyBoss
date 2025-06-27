@@ -1,5 +1,15 @@
 import React, { useState } from "react";
+<<<<<<< HEAD
 import { Eye, EyeOff, User, Mail, Lock, CheckCircle, AlertCircle, ArrowRight, Shield, Star } from "lucide-react";
+=======
+import { Link } from "react-router-dom";
+//import { useUser } from "../../../dashboard/src/context/UserContext";
+
+
+
+
+
+>>>>>>> f29dba8b725a275fbfeb367dbabdad54ae888872
 
 const SignUp = ({ onLogin }) => {
   const [formData, setFormData] = useState({
@@ -8,6 +18,7 @@ const SignUp = ({ onLogin }) => {
     password: "",
     confirmPassword: "",
   });
+<<<<<<< HEAD
   
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -338,3 +349,76 @@ const SignUp = ({ onLogin }) => {
 };
 
 export default SignUp;
+=======
+
+  const handleChange = (e) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (formData.password !== formData.confirmPassword) {
+      alert("Passwords do not match!");
+      return;
+    }
+
+   
+  };
+
+  return (
+    <section id="signup">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-purple-100 to-blue-200 px-4">
+      <div className="backdrop-blur-xl bg-white/60 shadow-2xl rounded-3xl p-10 max-w-lg w-full border border-purple-100">
+        <h2 className="text-4xl font-extrabold text-center text-purple-700 mb-8">
+          Create Account
+        </h2>
+        <form onSubmit={handleSubmit} className="space-y-5">
+          {[
+            { label: "Full Name", name: "name", type: "text", placeholder: "Your full name" },
+            { label: "Email Address", name: "email", type: "email", placeholder: "example@mail.com" },
+            { label: "Password", name: "password", type: "password", placeholder: "••••••••" },
+            { label: "Confirm Password", name: "confirmPassword", type: "password", placeholder: "Re-enter password" },
+          ].map(({ label, name, type, placeholder }) => (
+            <div key={name}>
+              <label className="block text-sm font-semibold text-gray-700 mb-1">
+                {label}
+              </label>
+              <input
+                type={type}
+                name={name}
+                value={formData[name]}
+                onChange={handleChange}
+                required
+                placeholder={placeholder}
+                className="w-full px-4 py-2 border border-purple-200 rounded-xl bg-white/80 focus:outline-none focus:ring-2 focus:ring-purple-400"
+              />
+            </div>
+          ))}
+          <button
+            type="submit"
+            className="w-full bg-gradient-to-r from-purple-500 to-indigo-500 text-white py-2 rounded-xl text-lg font-semibold hover:opacity-90 transition"
+          >
+            Sign Up
+          </button>
+        </form>
+        <p className="mt-6 text-center text-gray-600 text-sm">
+          Already have an account?{" "}
+          <Link
+            to="/login"
+            className="text-purple-700 font-semibold hover:underline"
+          >
+            Log In
+          </Link>
+        </p>
+      </div>
+    </div>
+    </section>
+  );
+};
+
+export default SignUp;
+>>>>>>> f29dba8b725a275fbfeb367dbabdad54ae888872
