@@ -1,5 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+//import { useUser } from "../../../dashboard/src/context/UserContext";
+
+
+
+
+
 
 const SignUp = ({ onLogin }) => {
   const [formData, setFormData] = useState({
@@ -24,11 +30,11 @@ const SignUp = ({ onLogin }) => {
       return;
     }
 
-    alert("Sign Up successful!");
-    if (onLogin) onLogin();
+   
   };
 
   return (
+    <section id="signup">
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-purple-100 to-blue-200 px-4">
       <div className="backdrop-blur-xl bg-white/60 shadow-2xl rounded-3xl p-10 max-w-lg w-full border border-purple-100">
         <h2 className="text-4xl font-extrabold text-center text-purple-700 mb-8">
@@ -74,6 +80,7 @@ const SignUp = ({ onLogin }) => {
         </p>
       </div>
     </div>
+    </section>
   );
 };
 

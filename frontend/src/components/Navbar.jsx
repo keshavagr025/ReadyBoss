@@ -26,7 +26,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className="bg-blue-50 shadow-md fixed w-full z-50 top-0 left-0 font-sans"
+      className="bg-blue-50 shadow-md fixed w-full z-50 top-0 left-0 font-sans overflow-hidden"
       style={{ fontFamily: "'Poppins', sans-serif" }}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -42,7 +42,7 @@ const Navbar = () => {
         />
 
         {/* Desktop Nav */}
-          {/* Center Links */}
+        {/* Center Links */}
         <ul className="hidden md:flex space-x-10 items-center mx-auto">
           {scrollItems.map((item) => (
             <li key={item.id}>
@@ -97,44 +97,55 @@ const Navbar = () => {
       </AnimatePresence>
 
       {/* Mobile Menu */}
+      {/* Mobile Menu Fullscreen Overlay */}
       <AnimatePresence>
         {isOpen && (
-          <motion.ul
-            className="md:hidden fixed top-16 right-4 w-56 bg-white rounded-lg shadow-lg z-50 flex flex-col py-4"
+          <motion.div
+            key="mobile-menu"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="md:hidden fixed inset-0 z-50 bg-white flex flex-col py-6 px-6"
           >
-            {scrollItems.map((item) => (
-              <li
-                key={item.id}
-                className="px-3 py-3 hover:bg-purple-100 text-purple-700 hover:text-purple-900 rounded-md transition cursor-pointer"
+            {/* Close Icon at Top Right */}
+            <div className="flex justify-end mb-4">
+              <button
+                onClick={toggleMenu}
+                aria-label="Close menu"
+                className="text-purple-700 hover:text-purple-900 transition"
               >
+                <FaTimes size={28} />
+              </button>
+            </div>
+
+            {/* Navigation Items */}
+            <div className="flex flex-col space-y-6">
+              {scrollItems.map((item) => (
                 <ScrollLink
+                  key={item.id}
                   to={item.id}
                   smooth={true}
                   duration={500}
                   offset={-80}
-                  className="block font-semibold"
-                  onClick={() => setIsOpen(false)}
+                  className="text-xl text-purple-700 hover:text-purple-900 font-semibold cursor-pointer"
+                  onClick={toggleMenu}
                 >
                   {item.label}
                 </ScrollLink>
-              </li>
-            ))}
-            <li className="px-6 py-3">
+              ))}
               <RouterLink
                 to="/signup"
-                className="block text-center bg-purple-500 text-white px-4 py-2 rounded-md font-semibold shadow hover:bg-purple-600 transition"
-                onClick={() => setIsOpen(false)}
+                className="text-center bg-purple-500 text-white px-4 py-3 rounded-md font-semibold shadow hover:bg-purple-600 transition"
+                onClick={toggleMenu}
               >
                 Sign Up
               </RouterLink>
-            </li>
-          </motion.ul>
+            </div>
+          </motion.div>
         )}
       </AnimatePresence>
+
     </nav>
   );
 };

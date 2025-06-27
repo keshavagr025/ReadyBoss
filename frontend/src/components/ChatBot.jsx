@@ -26,7 +26,7 @@ const ChatBot = () => {
   };
 
   return (
-    <div className="fixed bottom-5 right-5 z-50">
+    <div className="fixed bottom-5 left-5 z-50">
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -42,7 +42,7 @@ const ChatBot = () => {
               </button>
             </div>
 
-            <div className="flex-1 p-3 overflow-y-auto">
+            <div className="flex-1 p-3 overflow-hidden">
               {messages.map((msg, index) => (
                 <div
                   key={index}
